@@ -12,6 +12,8 @@ This repository contains a complete, production-ready implementation of a **Snow
 
 The solution leverages the full power of the Snowflake AI Data Cloud, integrating **Cortex Analyst** for structured queries, **Cortex Search** for vector-based document retrieval, and **Snowpark ML** for predictive modeling.
 
+![Architecture Diagram](docs/architecture_diagram.svg)
+
 ### Key Capabilities
 
 | Component | Technology | Functionality |
@@ -29,7 +31,9 @@ The solution leverages the full power of the Snowflake AI Data Cloud, integratin
 .
 ├── docs/
 │   ├── TROON_SETUP_GUIDE.md        # 📚 DETAILED SETUP INSTRUCTIONS
-│   └── troon_questions.md          # Test bank of sample questions
+│   ├── troon_questions.md          # Test bank of sample questions
+│   ├── architecture_diagram.svg    # System architecture visualization
+│   └── setup_flow_diagram.svg      # Setup process visualization
 ├── notebooks/
 │   ├── troon_ml_models.ipynb       # 🐍 Python notebook for ML training
 │   └── environment.yml             # Conda environment specification
@@ -50,6 +54,8 @@ The solution leverages the full power of the Snowflake AI Data Cloud, integratin
 Follow the **[Detailed Setup Guide](docs/TROON_SETUP_GUIDE.md)** for step-by-step instructions.
 
 ### Deployment Workflow
+
+![Setup Flow](docs/setup_flow_diagram.svg)
 
 1.  **Initialize Environment** (`sql/setup/`): Create database, schema, and tables.
 2.  **Hydrate Data** (`sql/data/`): Generate synthetic production-grade data.
@@ -77,4 +83,3 @@ Once deployed, the agent can answer complex business questions:
 ---
 
 **Built for Troon | Powered by Snowflake Cortex**
-
