@@ -3,8 +3,8 @@
   
   <!-- Root -->
   <g transform="translate(20, 30)">
-    <text x="0" y="15" font-size="16px">📁</text>
-    <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">Troon/</text>
+    <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📁</text>
+    <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">Troon/</text>
     
     <!-- Level 1 Lines -->
     <path d="M 8 25 L 8 470" stroke="#BDBDBD" stroke-width="1" fill="none" />
@@ -12,121 +12,121 @@
     <!-- Docs Folder -->
     <g transform="translate(30, 40)">
       <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-      <text x="0" y="15" font-size="16px">📂</text>
-      <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">docs/</text>
+      <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📂</text>
+      <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">docs/</text>
       
       <!-- Docs Children -->
       <path d="M 8 25 L 8 130" stroke="#BDBDBD" stroke-width="1" fill="none" />
       
       <g transform="translate(30, 30)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📄</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">TROON_SETUP_GUIDE.md</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 📚 DETAILED SETUP INSTRUCTIONS</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📄</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">TROON_SETUP_GUIDE.md</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 📚 DETAILED SETUP INSTRUCTIONS</text>
       </g>
       
       <g transform="translate(30, 60)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📄</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">troon_questions.md</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># Test bank of sample questions</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📄</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">troon_questions.md</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># Test bank of sample questions</text>
       </g>
       
       <g transform="translate(30, 90)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">🖼️</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">architecture_diagram.svg</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># System architecture visualization</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">🖼️</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">architecture_diagram.svg</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># System architecture visualization</text>
       </g>
       
       <g transform="translate(30, 120)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">🖼️</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">setup_flow_diagram.svg</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># Setup process visualization</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">🖼️</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">setup_flow_diagram.svg</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># Setup process visualization</text>
       </g>
     </g>
 
     <!-- Notebooks Folder -->
     <g transform="translate(30, 190)">
       <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-      <text x="0" y="15" font-size="16px">📂</text>
-      <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">notebooks/</text>
+      <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📂</text>
+      <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">notebooks/</text>
       
       <path d="M 8 25 L 8 70" stroke="#BDBDBD" stroke-width="1" fill="none" />
       
       <g transform="translate(30, 30)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📓</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">troon_ml_models.ipynb</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 🐍 Python notebook for ML training</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📓</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">troon_ml_models.ipynb</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 🐍 Python notebook for ML training</text>
       </g>
       
       <g transform="translate(30, 60)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">⚙️</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">environment.yml</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># Conda environment specification</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">⚙️</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">environment.yml</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># Conda environment specification</text>
       </g>
     </g>
 
     <!-- SQL Folder -->
     <g transform="translate(30, 280)">
       <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-      <text x="0" y="15" font-size="16px">📂</text>
-      <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">sql/</text>
+      <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📂</text>
+      <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121" font-weight="bold">sql/</text>
       
       <path d="M 8 25 L 8 190" stroke="#BDBDBD" stroke-width="1" fill="none" />
       
       <g transform="translate(30, 30)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📁</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">setup/</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 1️⃣ Database & Table creation</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📁</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">setup/</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 1️⃣ Database & Table creation</text>
       </g>
       
       <g transform="translate(30, 60)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📁</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">data/</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 2️⃣ Synthetic Data Generation</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📁</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">data/</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 2️⃣ Synthetic Data Generation</text>
       </g>
       
       <g transform="translate(30, 90)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📁</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">views/</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 3️⃣ Analytical & Semantic Views</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📁</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">views/</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 3️⃣ Analytical & Semantic Views</text>
       </g>
       
       <g transform="translate(30, 120)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📁</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">search/</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 4️⃣ Cortex Search Services</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📁</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">search/</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 4️⃣ Cortex Search Services</text>
       </g>
       
       <g transform="translate(30, 150)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📁</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">ml/</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 5️⃣ SQL Wrappers for ML Models</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📁</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">ml/</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 5️⃣ SQL Wrappers for ML Models</text>
       </g>
       
       <g transform="translate(30, 180)">
         <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-        <text x="0" y="15" font-size="16px">📁</text>
-        <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">agent/</text>
-        <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 6️⃣ Final Agent Configuration</text>
+        <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📁</text>
+        <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">agent/</text>
+        <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># 6️⃣ Final Agent Configuration</text>
       </g>
     </g>
 
     <!-- README -->
     <g transform="translate(30, 490)">
       <path d="M -22 10 L 0 10" stroke="#BDBDBD" stroke-width="1" fill="none" />
-      <text x="0" y="15" font-size="16px">📄</text>
-      <text x="25" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14px" fill="#212121">README.md</text>
-      <text x="250" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># This file</text>
+      <text x="0" y="15" font-size="16px" font-family="Arial, sans-serif">📄</text>
+      <text x="25" y="15" font-family="Arial, sans-serif" font-size="14px" fill="#212121">README.md</text>
+      <text x="250" y="15" font-family="Arial, sans-serif" font-size="13px" fill="#616161" font-style="italic"># This file</text>
     </g>
     
   </g>
