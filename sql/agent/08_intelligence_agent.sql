@@ -30,16 +30,41 @@ CREATE OR REPLACE AGENT TROON_INTELLIGENCE_AGENT
     orchestration: "For course performance, revenue, and bookings use CourseAnalyst. For member stats, engagement, and spending use MemberAnalyst. For pro shop sales and merchandise use ProShopAnalyst. For course reviews use ReviewSearch. For maintenance logs use MaintenanceSearch. For club policies use PolicySearch. For ML predictions use the appropriate prediction function."
     system: "You are an expert golf operations analyst. You help optimize tee sheets, improve member retention, and analyze retail performance."
     sample_questions:
-      - question: "Which course generated the most revenue last month?"
+      # Simple Questions (Data Retrieval)
+      - question: "What was the total revenue for Troon North Golf Club last month?"
         answer: "I'll use CourseAnalyst to sum total_revenue grouped by course_name for the last month."
-      - question: "How many Platinum members do we have?"
-        answer: "I'll use MemberAnalyst to count members where membership_tier is Platinum."
-      - question: "What are members saying about the greens at Troon North?"
-        answer: "I'll use ReviewSearch to find reviews for Troon North mentioning 'greens'."
-      - question: "Predict the churn risk for our Gold members"
-        answer: "I'll use PredictChurn to analyze risk for 'Gold' tier members."
-      - question: "Show me the maintenance logs for irrigation repairs"
-        answer: "I'll use MaintenanceSearch to find logs with maintenance_type 'Irrigation'."
+      - question: "How many active Platinum members do we currently have?"
+        answer: "I'll use MemberAnalyst to count members where membership_tier is Platinum and status is Active."
+      - question: "List the top 5 selling items in the Pro Shop by revenue."
+        answer: "I'll use ProShopAnalyst to sum total_sales_amount grouped by item_name, ordered by revenue descending, limited to 5."
+      - question: "What is the cancellation policy for rain?"
+        answer: "I'll use PolicySearch to find club policies related to 'cancellation' and 'rain'."
+      - question: "Show me the most recent maintenance log for Kapalua."
+        answer: "I'll use MaintenanceSearch to find the most recent maintenance log entries for 'Kapalua'."
+        
+      # Complex Questions (Analysis)
+      - question: "Which golf course has the highest average revenue per booking on weekends?"
+        answer: "I'll use CourseAnalyst to calculate avg_revenue_per_booking grouped by course_name, filtering for weekend days."
+      - question: "What is the average tenure of members who spent more than $500 in the pro shop last year?"
+        answer: "I'll use MemberAnalyst to calculate average tenure_years for members where total_merchandise_spend > 500."
+      - question: "Compare the total revenue from 'Apparel' vs 'Equipment' sales for the last quarter."
+        answer: "I'll use ProShopAnalyst to sum total_sales_amount grouped by item_category for 'Apparel' and 'Equipment' in the last quarter."
+      - question: "Summarize the main complaints from member reviews regarding pace of play."
+        answer: "I'll use ReviewSearch to find reviews containing 'pace of play' and summarize the findings."
+      - question: "Identify courses where maintenance logs mention 'irrigation' issues."
+        answer: "I'll use MaintenanceSearch to find logs mentioning 'irrigation' and list the associated courses."
+        
+      # Machine Learning Questions (Predictions)
+      - question: "Predict the churn risk for all our 'Troon Rewards' tier members."
+        answer: "I'll use PredictChurn with tier_filter='Troon Rewards' to analyze risk for those members."
+      - question: "How many members are candidates for an upgrade based on a $1000 spend threshold?"
+        answer: "I'll use IdentifyUpgrades with min_spend_threshold=1000."
+      - question: "What is the risk of no-shows for bookings in the next 7 days?"
+        answer: "I'll use PredictNoShow with days_ahead=7."
+      - question: "Which membership tier has the highest proportion of high-risk members?"
+        answer: "I'll use PredictChurn with tier_filter=NULL to analyze all tiers and identify the one with the highest high-risk count."
+      - question: "Are there any high-value members at risk of leaving?"
+        answer: "I'll use PredictChurn to identify high-risk members and MemberAnalyst to check their spending value."
 
   tools:
     # Semantic Views for Cortex Analyst
@@ -171,4 +196,3 @@ GRANT USAGE ON AGENT TROON_INTELLIGENCE_AGENT TO ROLE SYSADMIN;
 
 SELECT 'Troon Intelligence Agent created successfully' AS STATUS;
 SHOW AGENTS IN SCHEMA ANALYTICS;
-
