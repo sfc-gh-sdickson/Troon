@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <style>
+    .folder { fill: #E3F2FD; stroke: #1565C0; stroke-width: 1.5; }
+    .file { fill: #F5F5F5; stroke: #616161; stroke-width: 1; }
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14px; fill: #212121; }
+    .comment { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; fill: #616161; font-style: italic; }
+    .line { stroke: #BDBDBD; stroke-width: 1; }
+    .icon { font-size: 16px; }
+  </style>
+  
+  <rect width="800" height="600" fill="#FFFFFF" rx="5" />
+  
+  <!-- Root -->
+  <g transform="translate(20, 30)">
+    <text x="0" y="15" class="icon">📁</text>
+    <text x="25" y="15" class="text" font-weight="bold">Troon/</text>
+    
+    <!-- Level 1 Lines -->
+    <path d="M 8 25 L 8 470" class="line" fill="none" />
+    
+    <!-- Docs Folder -->
+    <g transform="translate(30, 40)">
+      <path d="M -22 10 L 0 10" class="line" fill="none" />
+      <text x="0" y="15" class="icon">📂</text>
+      <text x="25" y="15" class="text" font-weight="bold">docs/</text>
+      
+      <!-- Docs Children -->
+      <path d="M 8 25 L 8 130" class="line" fill="none" />
+      
+      <g transform="translate(30, 30)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📄</text>
+        <text x="25" y="15" class="text">TROON_SETUP_GUIDE.md</text>
+        <text x="250" y="15" class="comment"># 📚 DETAILED SETUP INSTRUCTIONS</text>
+      </g>
+      
+      <g transform="translate(30, 60)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📄</text>
+        <text x="25" y="15" class="text">troon_questions.md</text>
+        <text x="250" y="15" class="comment"># Test bank of sample questions</text>
+      </g>
+      
+      <g transform="translate(30, 90)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">🖼️</text>
+        <text x="25" y="15" class="text">architecture_diagram.svg</text>
+        <text x="250" y="15" class="comment"># System architecture visualization</text>
+      </g>
+      
+      <g transform="translate(30, 120)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">🖼️</text>
+        <text x="25" y="15" class="text">setup_flow_diagram.svg</text>
+        <text x="250" y="15" class="comment"># Setup process visualization</text>
+      </g>
+    </g>
+
+    <!-- Notebooks Folder -->
+    <g transform="translate(30, 190)">
+      <path d="M -22 10 L 0 10" class="line" fill="none" />
+      <text x="0" y="15" class="icon">📂</text>
+      <text x="25" y="15" class="text" font-weight="bold">notebooks/</text>
+      
+      <path d="M 8 25 L 8 70" class="line" fill="none" />
+      
+      <g transform="translate(30, 30)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📓</text>
+        <text x="25" y="15" class="text">troon_ml_models.ipynb</text>
+        <text x="250" y="15" class="comment"># 🐍 Python notebook for ML training</text>
+      </g>
+      
+      <g transform="translate(30, 60)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">⚙️</text>
+        <text x="25" y="15" class="text">environment.yml</text>
+        <text x="250" y="15" class="comment"># Conda environment specification</text>
+      </g>
+    </g>
+
+    <!-- SQL Folder -->
+    <g transform="translate(30, 280)">
+      <path d="M -22 10 L 0 10" class="line" fill="none" />
+      <text x="0" y="15" class="icon">📂</text>
+      <text x="25" y="15" class="text" font-weight="bold">sql/</text>
+      
+      <path d="M 8 25 L 8 190" class="line" fill="none" />
+      
+      <g transform="translate(30, 30)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📁</text>
+        <text x="25" y="15" class="text">setup/</text>
+        <text x="250" y="15" class="comment"># 1️⃣ Database & Table creation</text>
+      </g>
+      
+      <g transform="translate(30, 60)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📁</text>
+        <text x="25" y="15" class="text">data/</text>
+        <text x="250" y="15" class="comment"># 2️⃣ Synthetic Data Generation</text>
+      </g>
+      
+      <g transform="translate(30, 90)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📁</text>
+        <text x="25" y="15" class="text">views/</text>
+        <text x="250" y="15" class="comment"># 3️⃣ Analytical & Semantic Views</text>
+      </g>
+      
+      <g transform="translate(30, 120)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📁</text>
+        <text x="25" y="15" class="text">search/</text>
+        <text x="250" y="15" class="comment"># 4️⃣ Cortex Search Services</text>
+      </g>
+      
+      <g transform="translate(30, 150)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📁</text>
+        <text x="25" y="15" class="text">ml/</text>
+        <text x="250" y="15" class="comment"># 5️⃣ SQL Wrappers for ML Models</text>
+      </g>
+      
+      <g transform="translate(30, 180)">
+        <path d="M -22 10 L 0 10" class="line" fill="none" />
+        <text x="0" y="15" class="icon">📁</text>
+        <text x="25" y="15" class="text">agent/</text>
+        <text x="250" y="15" class="comment"># 6️⃣ Final Agent Configuration</text>
+      </g>
+    </g>
+
+    <!-- README -->
+    <g transform="translate(30, 490)">
+      <path d="M -22 10 L 0 10" class="line" fill="none" />
+      <text x="0" y="15" class="icon">📄</text>
+      <text x="25" y="15" class="text">README.md</text>
+      <text x="250" y="15" class="comment"># This file</text>
+    </g>
+    
+  </g>
+</svg>

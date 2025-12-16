@@ -27,25 +27,7 @@ The solution leverages the full power of the Snowflake AI Data Cloud, integratin
 
 ## 📂 Repository Structure
 
-```text
-.
-├── docs/
-│   ├── TROON_SETUP_GUIDE.md        # 📚 DETAILED SETUP INSTRUCTIONS
-│   ├── troon_questions.md          # Test bank of sample questions
-│   ├── architecture_diagram.svg    # System architecture visualization
-│   └── setup_flow_diagram.svg      # Setup process visualization
-├── notebooks/
-│   ├── troon_ml_models.ipynb       # 🐍 Python notebook for ML training
-│   └── environment.yml             # Conda environment specification
-├── sql/
-│   ├── setup/                      # 1️⃣ Database & Table creation
-│   ├── data/                       # 2️⃣ Synthetic Data Generation
-│   ├── views/                      # 3️⃣ Analytical & Semantic Views
-│   ├── search/                     # 4️⃣ Cortex Search Services
-│   ├── ml/                         # 5️⃣ SQL Wrappers for ML Models
-│   └── agent/                      # 6️⃣ Final Agent Configuration
-└── README.md                       # This file
-```
+![Repository Structure](docs/repository_structure.svg)
 
 ---
 
