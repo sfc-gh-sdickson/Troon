@@ -27,7 +27,7 @@ The solution leverages the full power of the Snowflake AI Data Cloud, integratin
 
 ## 📂 Repository Structure
 
-![Repository Structure](docs/repository_structure.svg)
+![Repository Structure](./docs/repository_structure.svg)
 
 ---
 
