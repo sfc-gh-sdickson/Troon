@@ -2,7 +2,7 @@
 
 # Troon Intelligence Agent - Sample Questions
 
-This document contains 15 sample questions to test the Troon Intelligence Agent, covering simple data retrieval, complex analysis, and machine learning predictions.
+This document contains 18 sample questions to test the Troon Intelligence Agent, covering simple data retrieval, complex analysis, machine learning predictions, and RealFood Hospitality business.
 
 ## Simple Questions (Data Retrieval)
 
@@ -70,3 +70,16 @@ This document contains 15 sample questions to test the Troon Intelligence Agent,
     - *Target*: `PredictChurn` + `MemberAnalyst`
     - *Reasoning*: Combines churn prediction with spend analysis.
 
+## RealFood Hospitality Questions
+
+16. **"List all active RealFood projects in the Hotels & Resorts sector."**
+    - *Target*: `RealFoodProjectAnalyst`
+    - *Data*: `SV_REALFOOD_PROJECTS` (Filter by Status='Active', Sector='Hotels & Resorts')
+
+17. **"What RealFood services are available for kitchen design?"**
+    - *Target*: `RealFoodServiceSearch`
+    - *Data*: `REALFOOD_SERVICES_SEARCH` (Semantic search for 'kitchen design')
+
+18. **"What is the total budget for completed Strategy projects?"**
+    - *Target*: `RealFoodProjectAnalyst`
+    - *Data*: `SV_REALFOOD_PROJECTS` (Sum budget, filter by Status='Completed', Type='Strategy')

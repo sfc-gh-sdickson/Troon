@@ -104,8 +104,32 @@ CREATE OR REPLACE SEMANTIC VIEW SV_PRO_SHOP_INSIGHTS
   COMMENT = 'Semantic view for retail performance, merchandise trends, and inventory analysis';
 
 -- ============================================================================
+-- Semantic View 4: RealFood Project Analytics
+-- ============================================================================
+CREATE OR REPLACE SEMANTIC VIEW SV_REALFOOD_PROJECTS
+  TABLES (
+    projects AS RAW.REALFOOD_PROJECTS
+      PRIMARY KEY (project_id)
+  )
+  DIMENSIONS (
+    projects.project_name AS projects.project_name,
+    projects.client_name AS projects.client_name,
+    projects.sector AS projects.sector,
+    projects.service_type AS projects.service_type,
+    projects.status AS projects.status,
+    projects.completion_year AS DATE_TRUNC('year', projects.completion_date)
+  )
+  METRICS (
+    projects.total_projects AS COUNT(DISTINCT projects.project_id),
+    projects.total_budget AS SUM(projects.project_budget),
+    projects.avg_budget AS AVG(projects.project_budget),
+    projects.active_projects AS COUNT_IF(projects.status = 'Active'),
+    projects.completed_projects AS COUNT_IF(projects.status = 'Completed')
+  )
+  COMMENT = 'Semantic view for RealFood Hospitality projects, budgets, and clients';
+
+-- ============================================================================
 -- Verification
 -- ============================================================================
 SELECT 'Troon semantic views created successfully' AS STATUS;
 SHOW SEMANTIC VIEWS IN SCHEMA ANALYTICS;
-

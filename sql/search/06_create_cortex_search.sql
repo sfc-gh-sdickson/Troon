@@ -1,8 +1,8 @@
 -- ============================================================================
 -- Troon Intelligence Agent - Cortex Search Services
 -- ============================================================================
--- Purpose: Enable semantic search over unstructured reviews, logs, and policies
--- Tables: COURSE_REVIEWS, MAINTENANCE_LOGS, CLUB_POLICIES
+-- Purpose: Enable semantic search over unstructured reviews, logs, policies, and services
+-- Tables: COURSE_REVIEWS, MAINTENANCE_LOGS, CLUB_POLICIES, REALFOOD_SERVICES
 -- ============================================================================
 
 USE DATABASE TROON_INTELLIGENCE;
@@ -68,12 +68,30 @@ AS
   FROM CLUB_POLICIES;
 
 -- ============================================================================
+-- Service 4: RealFood Services Search
+-- ============================================================================
+CREATE OR REPLACE CORTEX SEARCH SERVICE REALFOOD_SERVICES_SEARCH
+  ON description
+  ATTRIBUTES category, service_name
+  WAREHOUSE = TROON_WH
+  TARGET_LAG = '1 day'
+  COMMENT = 'Search RealFood Hospitality services and capabilities'
+AS
+  SELECT
+    service_id,
+    description,
+    service_name,
+    category,
+    created_at
+  FROM REALFOOD_SERVICES;
+
+-- ============================================================================
 -- Grant Permissions
 -- ============================================================================
 GRANT USAGE ON CORTEX SEARCH SERVICE COURSE_REVIEWS_SEARCH TO ROLE SYSADMIN;
 GRANT USAGE ON CORTEX SEARCH SERVICE MAINTENANCE_LOGS_SEARCH TO ROLE SYSADMIN;
 GRANT USAGE ON CORTEX SEARCH SERVICE CLUB_POLICIES_SEARCH TO ROLE SYSADMIN;
+GRANT USAGE ON CORTEX SEARCH SERVICE REALFOOD_SERVICES_SEARCH TO ROLE SYSADMIN;
 
 SELECT 'Cortex Search Services Created Successfully' AS STATUS;
 SHOW CORTEX SEARCH SERVICES IN SCHEMA RAW;
-

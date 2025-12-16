@@ -26,9 +26,9 @@ CREATE OR REPLACE AGENT TROON_INTELLIGENCE_AGENT
       tokens: 32000
 
   instructions:
-    response: "You are a helpful golf management intelligence assistant for Troon. Provide clear, accurate answers about course performance, member engagement, and retail sales. When using ML predictions, explain the insights clearly. Always cite data sources."
-    orchestration: "For course performance, revenue, and bookings use CourseAnalyst. For member stats, engagement, and spending use MemberAnalyst. For pro shop sales and merchandise use ProShopAnalyst. For course reviews use ReviewSearch. For maintenance logs use MaintenanceSearch. For club policies use PolicySearch. For ML predictions use the appropriate prediction function."
-    system: "You are an expert golf operations analyst. You help optimize tee sheets, improve member retention, and analyze retail performance."
+    response: "You are a helpful golf management and hospitality intelligence assistant for Troon and RealFood. Provide clear, accurate answers about course performance, member engagement, retail sales, and hospitality projects. When using ML predictions, explain the insights clearly. Always cite data sources."
+    orchestration: "For course performance, revenue, and bookings use CourseAnalyst. For member stats, engagement, and spending use MemberAnalyst. For pro shop sales and merchandise use ProShopAnalyst. For RealFood projects, clients, and budgets use RealFoodProjectAnalyst. For course reviews use ReviewSearch. For maintenance logs use MaintenanceSearch. For club policies use PolicySearch. For RealFood services and capabilities use RealFoodServiceSearch. For ML predictions use the appropriate prediction function."
+    system: "You are an expert golf operations and hospitality strategy analyst. You help optimize tee sheets, improve member retention, analyze retail performance, and track hospitality design projects."
     sample_questions:
       # Simple Questions (Data Retrieval)
       - question: "What was the total revenue for Troon North Golf Club last month?"
@@ -66,6 +66,14 @@ CREATE OR REPLACE AGENT TROON_INTELLIGENCE_AGENT
       - question: "Are there any high-value members at risk of leaving?"
         answer: "I'll use PredictChurn to identify high-risk members and MemberAnalyst to check their spending value."
 
+      # RealFood Hospitality Questions
+      - question: "List all active RealFood projects in the Hotels & Resorts sector."
+        answer: "I'll use RealFoodProjectAnalyst to list projects where status is 'Active' and sector is 'Hotels & Resorts'."
+      - question: "What RealFood services are available for kitchen design?"
+        answer: "I'll use RealFoodServiceSearch to find services related to 'kitchen design' and 'foodservice facility design'."
+      - question: "What is the total budget for completed Strategy projects?"
+        answer: "I'll use RealFoodProjectAnalyst to sum project_budget where status is 'Completed' and service_type includes 'Strategy'."
+
   tools:
     # Semantic Views for Cortex Analyst
     - tool_spec:
@@ -83,6 +91,11 @@ CREATE OR REPLACE AGENT TROON_INTELLIGENCE_AGENT
         name: "ProShopAnalyst"
         description: "Analyzes pro shop retail sales, inventory categories, and transaction values. Use for questions about merchandise, equipment sales, and shop revenue."
 
+    - tool_spec:
+        type: "cortex_analyst_text_to_sql"
+        name: "RealFoodProjectAnalyst"
+        description: "Analyzes RealFood Hospitality projects, budgets, clients, and sectors. Use for questions about hospitality design projects, strategy consulting, and F&B operations."
+
     # Cortex Search Services
     - tool_spec:
         type: "cortex_search"
@@ -98,6 +111,11 @@ CREATE OR REPLACE AGENT TROON_INTELLIGENCE_AGENT
         type: "cortex_search"
         name: "PolicySearch"
         description: "Searches club policies and SOPs. Use when users ask about dress codes, cancellation policies, or rules."
+
+    - tool_spec:
+        type: "cortex_search"
+        name: "RealFoodServiceSearch"
+        description: "Searches RealFood Hospitality service descriptions and capabilities. Use when users ask about available consulting services, design capabilities, or operational support."
 
     # ML Model Procedures
     - tool_spec:
@@ -147,6 +165,9 @@ CREATE OR REPLACE AGENT TROON_INTELLIGENCE_AGENT
     ProShopAnalyst:
       semantic_view: "TROON_INTELLIGENCE.ANALYTICS.SV_PRO_SHOP_INSIGHTS"
 
+    RealFoodProjectAnalyst:
+      semantic_view: "TROON_INTELLIGENCE.ANALYTICS.SV_REALFOOD_PROJECTS"
+
     # Cortex Search Resources
     ReviewSearch:
       name: "TROON_INTELLIGENCE.RAW.COURSE_REVIEWS_SEARCH"
@@ -165,6 +186,12 @@ CREATE OR REPLACE AGENT TROON_INTELLIGENCE_AGENT
       max_results: "5"
       title_column: "title"
       id_column: "policy_id"
+
+    RealFoodServiceSearch:
+      name: "TROON_INTELLIGENCE.RAW.REALFOOD_SERVICES_SEARCH"
+      max_results: "5"
+      title_column: "service_name"
+      id_column: "service_id"
 
     # ML Model Procedure Resources
     PredictChurn:

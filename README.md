@@ -2,9 +2,9 @@
 
 # Troon Intelligence Agent Solution
 
-**An Enterprise-Grade AI Analytics Platform for Golf Course Management**
+**An Enterprise-Grade AI Analytics Platform for Golf Course Management & Hospitality**
 
-This repository contains a complete, production-ready implementation of a **Snowflake Intelligence Agent** tailored for Troon. It unifies structured analytics, unstructured data search, and machine learning predictions into a single conversational interface.
+This repository contains a complete, production-ready implementation of a **Snowflake Intelligence Agent** tailored for Troon and its subsidiary, **RealFood Hospitality, Strategy and Design**. It unifies structured analytics, unstructured data search, and machine learning predictions into a single conversational interface.
 
 ---
 
@@ -18,8 +18,8 @@ The solution leverages the full power of the Snowflake AI Data Cloud, integratin
 
 | Component | Technology | Functionality |
 |-----------|------------|---------------|
-| **Descriptive Analytics** | **Cortex Analyst** | Natural language queries over 3 Semantic Views (Course Performance, Member Analytics, Pro Shop Insights). |
-| **Semantic Search** | **Cortex Search** | Vector search over Course Reviews, Maintenance Logs, and Club Policies. |
+| **Descriptive Analytics** | **Cortex Analyst** | Natural language queries over 4 Semantic Views (Course Performance, Member Analytics, Pro Shop Insights, RealFood Projects). |
+| **Semantic Search** | **Cortex Search** | Vector search over Course Reviews, Maintenance Logs, Club Policies, and RealFood Services. |
 | **Predictive AI** | **Snowpark ML** | 3 Custom ML Models: Churn Risk Prediction, No-Show Probability, Upgrade Candidate Identification. |
 | **Orchestration** | **Cortex Agents** | A unified agent that intelligently routes queries to the correct tool or model. |
 
@@ -57,6 +57,7 @@ Once deployed, the agent can answer complex business questions:
 *   **"Which course generated the most revenue last month?"** (Semantic View)
 *   **"How many Platinum members do we have?"** (Semantic View)
 *   **"What are members saying about the greens at Troon North?"** (Cortex Search)
+*   **"List active RealFood projects in the Hotel sector."** (Semantic View)
 
 **Predictive Intelligence:**
 *   **"Predict the churn risk for our Gold members"** (ML Model)

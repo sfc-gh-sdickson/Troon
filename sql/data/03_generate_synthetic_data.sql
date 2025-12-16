@@ -3,6 +3,7 @@
 -- ============================================================================
 -- Purpose: Generate realistic synthetic data for Troon platform
 -- Data Volume: Courses (10), Members (1000), Tee Times (5000), Sales (5000)
+-- RealFood Data: Projects (50), Services (10)
 -- ============================================================================
 
 USE DATABASE TROON_INTELLIGENCE;
@@ -12,6 +13,8 @@ USE WAREHOUSE TROON_WH;
 -- ============================================================================
 -- Clear existing data
 -- ============================================================================
+TRUNCATE TABLE IF EXISTS REALFOOD_SERVICES;
+TRUNCATE TABLE IF EXISTS REALFOOD_PROJECTS;
 TRUNCATE TABLE IF EXISTS CLUB_POLICIES;
 TRUNCATE TABLE IF EXISTS MAINTENANCE_LOGS;
 TRUNCATE TABLE IF EXISTS COURSE_REVIEWS;
@@ -193,11 +196,76 @@ VALUES
 ('POL-005', 'Cart Policy', 'Equipment', '2024-01-01', 'Golf carts must remain on paths around tees and greens. 90-degree rule is in effect unless otherwise posted.');
 
 -- ============================================================================
+-- 8. RealFood Projects (50 rows)
+-- ============================================================================
+INSERT INTO REALFOOD_PROJECTS
+SELECT
+    'RF-' || LPAD(SEQ4(), 4, '0') AS project_id,
+    'Project ' || SEQ4() || ' - ' || 
+    CASE UNIFORM(1, 5, RANDOM())
+        WHEN 1 THEN 'Grand Hotel Kitchen Reno'
+        WHEN 2 THEN 'Downtown Bistro Concept'
+        WHEN 3 THEN 'Resort F&B Strategy'
+        WHEN 4 THEN 'Stadium Concession Design'
+        ELSE 'Corporate Cafeteria Upgrade'
+    END AS project_name,
+    CASE UNIFORM(1, 10, RANDOM())
+        WHEN 1 THEN 'Marriott International'
+        WHEN 2 THEN 'Hilton Hotels'
+        WHEN 3 THEN 'Four Seasons'
+        WHEN 4 THEN 'Hyatt Regency'
+        WHEN 5 THEN 'Boston Red Sox'
+        WHEN 6 THEN 'Google Campus'
+        WHEN 7 THEN 'University of Texas'
+        WHEN 8 THEN 'Wynn Resorts'
+        WHEN 9 THEN 'Aramark'
+        ELSE 'Sodexo'
+    END AS client_name,
+    CASE UNIFORM(1, 6, RANDOM())
+        WHEN 1 THEN 'Hotels & Resorts'
+        WHEN 2 THEN 'Restaurants & Bars'
+        WHEN 3 THEN 'Entertainment & Recreation'
+        WHEN 4 THEN 'Workplace & Municipal'
+        WHEN 5 THEN 'Education'
+        ELSE 'Healthcare'
+    END AS sector,
+    CASE UNIFORM(1, 3, RANDOM())
+        WHEN 1 THEN 'Foodservice Design'
+        WHEN 2 THEN 'Strategy & Concept'
+        ELSE 'F&B Operations'
+    END AS service_type,
+    CASE UNIFORM(1, 3, RANDOM())
+        WHEN 1 THEN 'Active'
+        WHEN 2 THEN 'Completed'
+        ELSE 'Planning'
+    END AS status,
+    DATEADD(month, -UNIFORM(0, 24, RANDOM()), CURRENT_DATE()) AS completion_date,
+    UNIFORM(50000, 2000000, RANDOM()) AS project_budget,
+    CURRENT_TIMESTAMP() AS created_at
+FROM TABLE(GENERATOR(ROWCOUNT => 50));
+
+-- ============================================================================
+-- 9. RealFood Services (Static content based on website)
+-- ============================================================================
+INSERT INTO REALFOOD_SERVICES (service_id, service_name, category, description)
+VALUES
+('SVC-001', 'Foodservice Facility Design', 'Design', 'Comprehensive kitchen and service area layout design. Includes equipment specification, workflow optimization, and health code compliance. We focus on efficiency and chef-friendly workspaces.'),
+('SVC-002', 'Hospitality Interior Design', 'Design', 'Creating vibe-setting interiors that enhance the guest experience. From furniture selection to lighting and decor, we ensure the aesthetic matches the culinary concept.'),
+('SVC-003', 'Concept & Brand Development', 'Strategy', 'Developing unique restaurant and bar concepts from scratch. We define the culinary identity, target audience, menu strategy, and visual brand elements.'),
+('SVC-004', 'Food & Beverage Operations', 'Operations', 'Operational consulting to improve efficiency and profitability. We analyze menu engineering, labor costs, inventory management, and service standards.'),
+('SVC-005', 'Strategic Advisory', 'Strategy', 'High-level business planning for hospitality groups. We assist with feasibility studies, market analysis, and long-term growth strategies.'),
+('SVC-006', 'Menu Development', 'Operations', 'Culinary consulting to create profitable and delicious menus. We work with chefs to source ingredients, design dishes, and price items for maximum margin.'),
+('SVC-007', 'Equipment Procurement', 'Design', 'Sourcing and purchasing commercial kitchen equipment. We leverage vendor relationships to get the best pricing and ensure timely delivery.'),
+('SVC-008', 'Staff Training & Culture', 'Operations', 'Training programs for front-of-house and back-of-house staff. We focus on service excellence, product knowledge, and building a positive team culture.'),
+('SVC-009', 'Rebranding & Turnaround', 'Strategy', 'Revitalizing struggling concepts. We identify pain points, refresh the brand, and implement operational changes to drive traffic and revenue.'),
+('SVC-010', 'Master Planning', 'Design', 'Large-scale planning for multi-outlet venues like resorts, campuses, and stadiums. We design the overall F&B ecosystem for optimal flow and variety.');
+
+-- ============================================================================
 -- Validation
 -- ============================================================================
 SELECT 'Data Generation Complete' AS STATUS;
 SELECT 'GOLF_COURSES', COUNT(*) FROM GOLF_COURSES
 UNION ALL SELECT 'MEMBERS', COUNT(*) FROM MEMBERS
 UNION ALL SELECT 'TEE_TIMES', COUNT(*) FROM TEE_TIMES
-UNION ALL SELECT 'PRO_SHOP_SALES', COUNT(*) FROM PRO_SHOP_SALES;
-
+UNION ALL SELECT 'PRO_SHOP_SALES', COUNT(*) FROM PRO_SHOP_SALES
+UNION ALL SELECT 'REALFOOD_PROJECTS', COUNT(*) FROM REALFOOD_PROJECTS;

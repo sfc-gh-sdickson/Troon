@@ -112,8 +112,33 @@ CREATE OR REPLACE TABLE CLUB_POLICIES (
 );
 
 -- ============================================================================
+-- 8. RealFood Projects (Structured Data)
+-- ============================================================================
+CREATE OR REPLACE TABLE REALFOOD_PROJECTS (
+    project_id VARCHAR(50) PRIMARY KEY,
+    project_name VARCHAR(150),
+    client_name VARCHAR(150),
+    sector VARCHAR(100), -- 'Hotels & Resorts', 'Restaurants & Bars', 'Education', etc.
+    service_type VARCHAR(100), -- 'Design', 'Strategy', 'Operations'
+    status VARCHAR(50), -- 'Active', 'Completed', 'Planning'
+    completion_date DATE,
+    project_budget FLOAT,
+    created_at TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+-- ============================================================================
+-- 9. RealFood Services (Unstructured Text for Cortex Search)
+-- ============================================================================
+CREATE OR REPLACE TABLE REALFOOD_SERVICES (
+    service_id VARCHAR(50) PRIMARY KEY,
+    service_name VARCHAR(150),
+    category VARCHAR(100), -- 'Foodservice Design', 'Interior Design', 'Strategy', 'Branding'
+    description VARCHAR(16777216), -- Detailed service description
+    created_at TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+-- ============================================================================
 -- Verification
 -- ============================================================================
 SELECT 'Tables created successfully' AS STATUS;
 SHOW TABLES IN SCHEMA RAW;
-
